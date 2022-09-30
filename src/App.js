@@ -1,23 +1,25 @@
-import logo from './logo.svg';
 import './App.css';
+import Carrito from './componentes/Carrito';
+import Inicio from './componentes/Inicio';
+import {BrowserRouter, Route,Routes, Link} from 'react-router-dom';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Navbarr from './componentes/Navbar';
+import Footer from './componentes/Footer';
+import {CartProvider} from './componentes/CartContext';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <CartProvider>
+        <BrowserRouter>
+          <Navbarr />
+            <Routes>
+              <Route path='/' element={<Inicio />} />
+              <Route path='/carrito' element={<Carrito />} />
+            </Routes>
+          <Footer />
+        </BrowserRouter>
+      </CartProvider>
     </div>
   );
 }
