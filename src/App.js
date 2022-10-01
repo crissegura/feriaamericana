@@ -16,6 +16,7 @@ function App() {
             <Routes>
               <Route path='/' element={<Inicio />} />
               <Route path='/carrito' element={<Carrito />} />
+              <Route path='/categoria/:categoria' element={<Inicio />} />
             </Routes>
           <Footer />
         </BrowserRouter>

@@ -9,9 +9,9 @@ const Carrito = () =>{
 
     const {cart, removeFromCart, getTotal} = useContext(CartContext);
 
-    return cart.length > 0 ?(
-            <div>
-                <div className="containerTotal">
+    return(
+        <div>
+            <div className="containerTotal">
                     <h3 >Precio total: ${getTotal()} </h3>
                     <Link to='/'>
                         <Button variant='primary' >
@@ -22,11 +22,11 @@ const Carrito = () =>{
                 <div className="container">
                     {cart.map((element)=>
                         <Card className="card">
-                            <Card.Img variant="top" src={element.item.image} />
+                            <Card.Img variant="top" src={element.item.foto} />
                             <Card.Body>
-                                <Card.Title>{element.item.name}</Card.Title>
+                                <Card.Title>{element.item.nombre}</Card.Title>
                                 <Card.Text>
-                                <p>Cantidad: {element.cantidad}</p>
+                                <p> ${element.item.precio}</p>
                                 </Card.Text>
                             </Card.Body>
                             <Button variant="danger" onClick={()=> removeFromCart(element.item.id)}>
@@ -35,19 +35,8 @@ const Carrito = () =>{
                         </Card>
                     )}
                 </div>
-            </div>  
-        ) : (
-            <> 
-                <h2>Carrito vacio</h2>
-                <Link to={'/'}>
-                    <Button variant='primary'>
-                        Ver productos
-                    </Button>
-                </Link>
-            </>
-            
-        )
-
+        </div>
+    )
 }
 
 export default Carrito;
