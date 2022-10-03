@@ -1,17 +1,19 @@
-import React, {useState, useEffect} from "react";
+import React, {useState, useEffect, useContext} from "react";
 import Card from 'react-bootstrap/Card';
 import Contador from "./Contador";
 import { useParams } from "react-router-dom";
 import { collection, getDocs, query, where } from 'firebase/firestore';
 import db from '../services/firebase';
 import Loader from "./Loader";
-
+import { CartContext } from "./CartContext";
 
 const Inicio = () =>{
 
     const [productos, setProductos] = useState([])
 
     const {categoria} = useParams()
+
+    const {isInCart}  = useContext(CartContext);
 
 
     const getProductos=async()=>{
@@ -75,14 +77,14 @@ const Inicio = () =>{
                         <Card className="card">
                             <Card.Img variant="top" src={producto.foto} />
                             <Card.Body>
-                                <Card.Title>{producto.nombre}</Card.Title>
-                                <Card.Text>
+                                <Card.Title className="cardTitle">{producto.nombre}</Card.Title>
+                                <Card.Text className="cardDescription">
                                    {producto.descripcion}
                                 </Card.Text>
                                 <Card.Text>
                                     ${producto.precio}
                                 </Card.Text>
-                                <Contador producto={producto.nombre} productoCard={producto} />
+                                <Contador producto={producto.nombre} productoCard={producto}/>
                             </Card.Body>
                         </Card>
                     ))}

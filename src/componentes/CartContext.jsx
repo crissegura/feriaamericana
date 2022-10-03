@@ -13,8 +13,6 @@ export const CartProvider = ({defaultValue = [], children }) => {
     }
 
     const addToCart = (item, cantidad) =>{
-        console.log('item:' + item)
-        console.log('cantidad:' + cantidad)
         if (isInCart(item.id)){
             const newCart = [...cart]
             for (const elemento of newCart){

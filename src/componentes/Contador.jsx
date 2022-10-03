@@ -24,7 +24,7 @@ function Contador({producto,productoCard}){
 
     return(
         <div>
-            <Button variant='primary' onClick={()=> onAdd()} >Agregar al carrito</Button>
+            <Button variant='primary' className='agregarCarrito' onClick={()=> onAdd()} >Agregar al carrito</Button>
         </div>
     )
 }
