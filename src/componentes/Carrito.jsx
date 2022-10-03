@@ -11,14 +11,7 @@ const Carrito = () =>{
 
     return(
         <div>
-            <div className="containerTotal">
-                    <h3 >Precio total: ${getTotal()} </h3>
-                    <Link to='/'>
-                        <Button variant='primary' >
-                            Confirmar compra    
-                        </Button> 
-                    </Link>
-                </div>  
+
                 <div className="container">
                     {cart.map((element)=>
                         <Card className="card">
@@ -34,6 +27,17 @@ const Carrito = () =>{
                             </Button>
                         </Card>
                     )}
+                </div>
+                 <div className="containerTotal">
+                    <h3 >Precio total: ${getTotal()} </h3>
+
+
+                    <Link to='/'>
+                        <Button variant='primary' >
+                            Confirmar compra
+                        </Button>
+                    </Link>
+
                 </div>
         </div>
     )
