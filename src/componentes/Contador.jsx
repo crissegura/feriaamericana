@@ -1,11 +1,10 @@
 import {React, useContext} from 'react';
 import Button from 'react-bootstrap/Button';
 import {CartContext} from './CartContext';
-import Swal from 'sweetalert2/dist/sweetalert2.js';
-import { Link } from 'react-router-dom';
 
 
-function Contador({producto,productoCard}){
+
+function Contador({stock, producto, productoCard}){
 
     const {addToCart} = useContext(CartContext);
 
@@ -24,6 +23,7 @@ function Contador({producto,productoCard}){
 
     return(
         <div>
+            <p> Cantidad : {stock} </p>
             <Button variant='primary' className='agregarCarrito' onClick={()=> onAdd()} >Agregar al carrito</Button>
         </div>
     )

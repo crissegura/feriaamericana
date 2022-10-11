@@ -1,11 +1,11 @@
-import React, {useState, useEffect, useContext} from "react";
+import React, {useState, useEffect} from "react";
 import Card from 'react-bootstrap/Card';
 import Contador from "./Contador";
 import { useParams } from "react-router-dom";
 import { collection, getDocs, query, where } from 'firebase/firestore';
 import db from '../services/firebase';
 import Loader from "./Loader";
-import { CartContext } from "./CartContext";
+
 
 const Inicio = () =>{
 
@@ -13,17 +13,13 @@ const Inicio = () =>{
 
     const {categoria} = useParams()
 
-    const {isInCart}  = useContext(CartContext);
-
 
     const getProductos=async()=>{
         try{
             const document = collection(db,"productos")
             const col = await getDocs(document)
-            console.log('col.docs', col.docs)
             const result = col.docs.map((doc)=> doc={id:doc.id,...doc.data()})
             setProductos(result)
-            console.log('result', result)
         }catch(error){
             console.log(error)
         }
@@ -34,10 +30,8 @@ const Inicio = () =>{
         try{
           const document = query (collection(db,"productos"),where("categoria","==",category))
           const col = await getDocs(document)
-          console.log('col.docs', col.docs)
           const result = col.docs.map((doc)=> doc={id:doc.id,...doc.data()})
           setProductos(result)
-          console.log('result', result)
         }catch(error){
           console.log(error)
     
@@ -59,21 +53,23 @@ const Inicio = () =>{
                         .includes(texto.toString()
                         .toLocaleLowerCase()))
 
+    const mostrarStock1 = buscarProducto.filter(producto=>producto.stock>0)
+
     return(
         <>
         {
             productos.length !==0?
             (<div>
                     <div className='formBuscar'>
-                <label htmlFor="">Buscar producto</label>
+                <label>Buscar producto</label>
                 <input className="inputBuscar" type="text" value={texto} onChange={getTexto} placeholder="🔍︎ jean" />
             </div>
             
             <div className="container">
                 {
-                    buscarProducto.length !==0?
+                    mostrarStock1.length !==0?
                     <div className="container">
-                    {buscarProducto.map((producto)=>(
+                    {mostrarStock1.map((producto)=>(
                         <Card className="card">
                             <Card.Img variant="top" src={producto.foto} />
                             <Card.Body>
@@ -84,7 +80,7 @@ const Inicio = () =>{
                                 <Card.Text>
                                     ${producto.precio}
                                 </Card.Text>
-                                <Contador producto={producto.nombre} productoCard={producto}/>
+                                <Contador stock={producto.stock} producto={producto.nombre} productoCard={producto}/>
                             </Card.Body>
                         </Card>
                     ))}

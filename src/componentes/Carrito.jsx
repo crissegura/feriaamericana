@@ -32,7 +32,7 @@ const Carrito = () =>{
                     </div>
                     <div className="containerTotal">
                         <h3 >Precio total: ${getTotal()} </h3>
-                        <Link to='/'>
+                        <Link to='/checkout'>
                             <Button variant='primary' >
                                 Confirmar compra
                             </Button>

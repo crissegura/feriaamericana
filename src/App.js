@@ -6,6 +6,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Navbarr from './componentes/Navbar';
 import Footer from './componentes/Footer';
 import {CartProvider} from './componentes/CartContext';
+import Checkout from './componentes/Checkout';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
               <Route path='/' element={<Inicio />} />
               <Route path='/carrito' element={<Carrito />} />
               <Route path='/categoria/:categoria' element={<Inicio />} />
+              <Route path='/checkout' element={<Checkout />} />
             </Routes>
           <Footer />
         </BrowserRouter>

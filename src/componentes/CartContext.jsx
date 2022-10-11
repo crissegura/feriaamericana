@@ -1,4 +1,7 @@
 import { createContext , useState } from "react";
+import {doc, updateDoc} from 'firebase/firestore';
+import db from '../services/firebase';
+
 
 export const CartContext = createContext({})
 
@@ -12,7 +15,17 @@ export const CartProvider = ({defaultValue = [], children }) => {
         setCart([])
     }
 
-    const addToCart = (item, cantidad) =>{
+    const updateStock2 = () =>{
+        cart.map((e)=>{
+            const docs = doc(db, 'productos', e.item.id)
+            const updStock = -1
+            updateDoc(docs, {
+                stock : updStock
+            })
+        })
+    }
+
+    const addToCart = (item,cantidad) =>{
         if (isInCart(item.id)){
             const newCart = [...cart]
             for (const elemento of newCart){
@@ -20,21 +33,18 @@ export const CartProvider = ({defaultValue = [], children }) => {
                     elemento.cantidad = elemento.cantidad + cantidad
                 }
             }
+            updateStock2()
             setCart(newCart)
         }else{
+            updateStock2()
             setCart(
                 [
                     ...cart,{
                         item: item,
-                        cantidad: cantidad
                     }
                 ]
             )
         }
-    }
-
-    const isInCart = (id) =>{
-        return cart.find((elemento)=> elemento.item.id === id)
     }
 
     const getTotal=()=>{
@@ -53,8 +63,23 @@ export const CartProvider = ({defaultValue = [], children }) => {
         return cantidad;
     }
 
+    const isInCart = (id) =>{
+        return cart.find((elemento)=> elemento.item.id === id)
+    }
+
+    const updateStock3 = () =>{
+        cart.map((e)=>{
+            const docs = doc(db, 'productos', e.item.id)
+            const updStock = 1
+            updateDoc(docs, {
+                stock : updStock
+            })
+        })
+    }
+
     const removeFromCart = (id) =>{
         const newCart = [...cart].filter(elemento=> elemento.item.id !== id)
+        updateStock3()
         setCart(newCart)
     }
 
