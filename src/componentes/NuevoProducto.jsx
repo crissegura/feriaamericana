@@ -2,8 +2,9 @@ import React,{useState} from "react";
 import { collection, addDoc } from "firebase/firestore";
 import Button from 'react-bootstrap/Button';
 import db from "../services/firebase";
+import { storage } from '../services/firebase';
 import { Link } from "react-router-dom";
-
+import { ref, uploadBytesResumable, getDownloadURL, uploadBytes } from "firebase/storage";
 
 const NuevoProducto = () =>{
    
@@ -23,9 +24,33 @@ const NuevoProducto = () =>{
         })
     }
 
+
+        const [file, setFile] = useState("");
+
+       const getchange = (event) =>{
+        event.preventDefault();
+        console.log(event.target.files[0])
+        const {name,value} = event.target
+         setFile(event.target.files[0])
+           setProd((prev)=>{
+            return {...prev,[name]:value}
+        })
+        console.log("antes")
+        const file=event.target.files[0]
+        console.log(file)
+        console.log(file.name)
+         console.log("desppues")
+        const storageRef = ref(storage, `${file.name}`);
+        const uploadTask = uploadBytesResumable(storageRef, file);
+        uploadBytes(storageRef, file).then((snapshot) => {
+  console.log('Uploaded a blob or file!');
+});
+
+    }
     const subir = async()=>{
         try{
             const docRef = await addDoc(collection(db, "productos"), {
+
                 nombre: prod.nombre,
                 foto: prod.foto,
                 descripcion:prod.descripcion,
@@ -33,7 +58,7 @@ const NuevoProducto = () =>{
                 precio: prod.precio,
                 stock:1
               });
-            console.log("ME SUBI", docRef.id)
+            console.log("ME SUBI", docRef)
         }catch(error){
             console.log(error)
         }
@@ -43,13 +68,13 @@ const NuevoProducto = () =>{
 
         <div style={{textAlign:'center',paddingTop:'10px'}}>  
            <h3>Cargar nuevo producto</h3>
-            <form>
+            <form  method="post" >
                 <label>Imagen</label>
                 <input 
-                    type="text" 
+                    type="file"
                     name="foto" 
                     value={prod.foto}
-                    onChange={getInfo} />
+                    onChange={getchange} />
                 <br />
                 <br />
                 <label>Nombre</label>
