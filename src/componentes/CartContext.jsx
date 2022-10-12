@@ -29,12 +29,9 @@ export const CartProvider = ({defaultValue = [], children }) => {
     }
 
     const updateStock2Cart = (cart) =>{
-        console.log('primer console cart')
-        console.log(cart)
         cart.map((e)=>{
-            const docs = doc(db, 'productos', e.item.id)
+            const docs = doc(db, 'productos', e.id)
             const updStock = -1
-            console.log('entre')
             updateDoc(docs, {
                 stock : updStock
             })
@@ -54,6 +51,7 @@ export const CartProvider = ({defaultValue = [], children }) => {
             setCart(newCart)
         }else{
             console.log('Mando al carrito 1')
+             updateStock2Cart([item])
             setCart(
                 [
                     ...cart,{
@@ -61,7 +59,7 @@ export const CartProvider = ({defaultValue = [], children }) => {
                     }
                 ]
             )
-            updateStock2Cart(cart)
+
         }
     }
 
