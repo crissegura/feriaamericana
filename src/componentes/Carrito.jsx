@@ -13,7 +13,15 @@ const Carrito = () =>{
         <>
             {
                 cart.length !== 0 ? (
-                <div>
+                <div style={{textAlign:'left',paddingLeft:'10px',paddingTop:'10px'}}>
+                    <Link to='/'>
+                        <Button variant='success'>
+                            ❰❰ seguir viendo
+                        </Button>
+                    </Link>
+
+                    <h3 style={{textAlign:'center'}} >Productos en carrito:</h3>
+
                     <div className="container">
                         {cart.map((element)=>
                             <Card className="card">

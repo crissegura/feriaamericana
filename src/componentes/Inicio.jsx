@@ -80,7 +80,7 @@ const Inicio = () =>{
                                 <Card.Text>
                                     ${producto.precio}
                                 </Card.Text>
-                                <Contador stock={producto.stock} producto={producto.nombre} productoCard={producto}/>
+                                <Contador producto={producto.nombre} productoCard={producto}/>
                             </Card.Body>
                         </Card>
                     ))}

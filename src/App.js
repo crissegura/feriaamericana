@@ -7,6 +7,7 @@ import Navbarr from './componentes/Navbar';
 import Footer from './componentes/Footer';
 import {CartProvider} from './componentes/CartContext';
 import Checkout from './componentes/Checkout';
+import NuevoProducto from './componentes/NuevoProducto';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
               <Route path='/carrito' element={<Carrito />} />
               <Route path='/categoria/:categoria' element={<Inicio />} />
               <Route path='/checkout' element={<Checkout />} />
+              <Route path='/nuevo' element={<NuevoProducto />} />
             </Routes>
           <Footer />
         </BrowserRouter>
