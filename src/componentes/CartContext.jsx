@@ -16,9 +16,25 @@ export const CartProvider = ({defaultValue = [], children }) => {
     }
 
     const updateStock2 = () =>{
+        console.log('primer console')
+        console.log(cart)
         cart.map((e)=>{
             const docs = doc(db, 'productos', e.item.id)
             const updStock = -1
+            console.log('entre')
+            updateDoc(docs, {
+                stock : updStock
+            })
+        })
+    }
+
+    const updateStock2Cart = (cart) =>{
+        console.log('primer console cart')
+        console.log(cart)
+        cart.map((e)=>{
+            const docs = doc(db, 'productos', e.item.id)
+            const updStock = -1
+            console.log('entre')
             updateDoc(docs, {
                 stock : updStock
             })
@@ -27,6 +43,7 @@ export const CartProvider = ({defaultValue = [], children }) => {
 
     const addToCart = (item,cantidad) =>{
         if (isInCart(item.id)){
+            console.log('ya estoy en el carrito')
             const newCart = [...cart]
             for (const elemento of newCart){
                 if(elemento.item.id === item.id){
@@ -36,7 +53,7 @@ export const CartProvider = ({defaultValue = [], children }) => {
             updateStock2()
             setCart(newCart)
         }else{
-            updateStock2()
+            console.log('Mando al carrito 1')
             setCart(
                 [
                     ...cart,{
@@ -44,6 +61,7 @@ export const CartProvider = ({defaultValue = [], children }) => {
                     }
                 ]
             )
+            updateStock2Cart(cart)
         }
     }
 
