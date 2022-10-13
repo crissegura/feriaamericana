@@ -7,6 +7,7 @@ import Navbarr from './componentes/Navbar';
 import Footer from './componentes/Footer';
 import {CartProvider} from './componentes/CartContext';
 import Checkout from './componentes/Checkout';
+import Ingresar from './componentes/Ingresar';
 import NuevoProducto from './componentes/NuevoProducto';
 
 function App() {
@@ -20,7 +21,8 @@ function App() {
               <Route path='/carrito' element={<Carrito />} />
               <Route path='/categoria/:categoria' element={<Inicio />} />
               <Route path='/checkout' element={<Checkout />} />
-              <Route path='/nuevo' element={<NuevoProducto />} />
+              <Route path='/ingresar' element={<Ingresar />} />
+              <Route path='/nhuhehvho' element={<NuevoProducto />} />
             </Routes>
           <Footer />
         </BrowserRouter>

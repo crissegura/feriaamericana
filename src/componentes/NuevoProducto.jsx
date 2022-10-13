@@ -25,32 +25,30 @@ const NuevoProducto = () =>{
     }
 
 
-        const [file, setFile] = useState("");
+    const [file, setFile] = useState("");
 
-       const getchange = (event) =>{
+    const getchange = (event) =>{
         event.preventDefault();
         console.log(event.target.files[0])
         const {name,value} = event.target
-         setFile(event.target.files[0])
-           setProd((prev)=>{
+        setFile(event.target.files[0])
+        setProd((prev)=>{
             return {...prev,[name]:value}
         })
         console.log("antes")
         const file=event.target.files[0]
         console.log(file)
         console.log(file.name)
-         console.log("desppues")
+        console.log("desppues")
         const storageRef = ref(storage, `${file.name}`);
         const uploadTask = uploadBytesResumable(storageRef, file);
         uploadBytes(storageRef, file).then((snapshot) => {
-  console.log('Uploaded a blob or file!');
-});
-
+        console.log('Uploaded a blob or file!');
+        });
     }
     const subir = async()=>{
         try{
             const docRef = await addDoc(collection(db, "productos"), {
-
                 nombre: prod.nombre,
                 foto: "https://firebasestorage.googleapis.com/v0/b/feriaamericana-55805.appspot.com/o/"+file.name+"?alt=media",
                 descripcion:prod.descripcion,

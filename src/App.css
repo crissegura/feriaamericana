@@ -4,6 +4,12 @@
     font-family: 'Nova Round', cursive;
 }
 
+.adminBtn{
+    border:none;
+    background-color: transparent;
+    margin-right: 5px;
+}
+
 body{
     position: relative;
     min-height: 100vh;
