@@ -52,7 +52,7 @@ const NuevoProducto = () =>{
             const docRef = await addDoc(collection(db, "productos"), {
 
                 nombre: prod.nombre,
-                foto: prod.foto,
+                foto: "https://firebasestorage.googleapis.com/v0/b/feriaamericana-55805.appspot.com/o/"+file.name+"?alt=media",
                 descripcion:prod.descripcion,
                 categoria:prod.categoria,
                 precio: prod.precio,
