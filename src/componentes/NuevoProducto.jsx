@@ -7,14 +7,14 @@ import { Link } from "react-router-dom";
 import { ref, uploadBytesResumable, getDownloadURL, uploadBytes } from "firebase/storage";
 
 const NuevoProducto = () =>{
-   
+    
     const [prod, setProd] = useState({
         foto:'',
         nombre:'',
         descripcion:'',
         categoria:'',
         precio:'',
-        stock:1})
+        stock:''})
 
     const getInfo = (event) =>{
         event.preventDefault();
@@ -104,7 +104,7 @@ const NuevoProducto = () =>{
                     onChange={getInfo}
                     type="number" 
                     name="precio" 
-                    value={prod.precio} />
+                    value={prod.precio}/>
                 <br />
                 <br />
                 <Link to='/'>

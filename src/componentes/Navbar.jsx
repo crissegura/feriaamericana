@@ -24,7 +24,7 @@ function Navbarr() {
             </Link>
             <NavDropdown title="Categorias" id="basic-nav-dropdown">
               <div className='categoria'>
-                <Link to='/categoria/mujer' >    
+                <Link to='/categoria/mujeres' >    
                     <button className='btn-nav ' >
                       Mujeres
                     </button>

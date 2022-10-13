@@ -24,8 +24,8 @@ const Carrito = () =>{
 
                     <div className="container">
                         {cart.map((element)=>
-                            <Card className="card">
-                                <Card.Img variant="top" src={element.item.foto} />
+                            <Card className="card" style={{textAlign:'center'}}>
+                                <Card.Img variant="top" className="imgInicio" src={element.item.foto} />
                                 <Card.Body>
                                     <Card.Title>{element.item.nombre}</Card.Title>
                                     <Card.Text>

@@ -26,6 +26,12 @@ body{
     margin: 0;
 }
 
+.divPrecioyAdd{
+    display: flex;
+    align-items: baseline;
+    justify-content: space-around;
+}
+
 .container{
     display: flex;
     flex-wrap: wrap;
@@ -34,16 +40,24 @@ body{
 
 .card{
     width:15rem;
-    text-align: center;
+    max-height: 30rem;
     margin: 10px;
+}
+
+.cardTitle{
+    max-height: 2.5rem;
+    text-align: center;
+    min-height: 2.5rem;
 }
 
 .imgInicio{
     width: 100%;
-    height: 16rem;
+    max-height: 14rem;
+    min-height: 14rem;
 }
 
 .cardDescription{
+    text-align: center;
     max-height: 4rem;
     min-height: 4rem;
 }
@@ -211,7 +225,7 @@ text-decoration: none;
         padding: 5px;
     }
     .card{
-        width:9rem;
+        width:15rem;
         text-align: center;
         margin: 5px;
     }

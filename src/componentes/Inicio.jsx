@@ -77,10 +77,7 @@ const Inicio = () =>{
                                 <Card.Text className="cardDescription">
                                    {producto.descripcion}
                                 </Card.Text>
-                                <Card.Text>
-                                    ${producto.precio}
-                                </Card.Text>
-                                <Contador producto={producto.nombre} productoCard={producto}/>
+                                <Contador producto={producto.precio} productoCard={producto}/>
                             </Card.Body>
                         </Card>
                     ))}
