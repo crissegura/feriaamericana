@@ -9,6 +9,8 @@ import {CartProvider} from './componentes/CartContext';
 import Checkout from './componentes/Checkout';
 import Ingresar from './componentes/Ingresar';
 import NuevoProducto from './componentes/NuevoProducto';
+import Padministrador from './componentes/Padministrador';
+import Verventas from './componentes/Verventas';
 
 function App() {
   return (
@@ -22,7 +24,9 @@ function App() {
               <Route path='/categoria/:categoria' element={<Inicio />} />
               <Route path='/checkout' element={<Checkout />} />
               <Route path='/ingresar' element={<Ingresar />} />
+              <Route path='/padministrador' element={<Padministrador />}/>
               <Route path='/nhuhehvho' element={<NuevoProducto />} />
+              <Route path='/pvendidos' element={<Verventas />} />
             </Routes>
           <Footer />
         </BrowserRouter>

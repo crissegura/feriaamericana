@@ -39,7 +39,7 @@ const NuevoProducto = () =>{
         const file=event.target.files[0]
         console.log(file)
         console.log(file.name)
-        console.log("desppues")
+        console.log("despues")
         const storageRef = ref(storage, `${file.name}`);
         const uploadTask = uploadBytesResumable(storageRef, file);
         uploadBytes(storageRef, file).then((snapshot) => {
@@ -107,7 +107,7 @@ const NuevoProducto = () =>{
                     value={prod.precio}/>
                 <br />
                 <br />
-                <Link to='/'>
+                <Link to='/padministrador'>
                     <Button onClick={subir}> 
                         Subir producto
                     </Button> 

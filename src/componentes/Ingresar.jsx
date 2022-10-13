@@ -19,7 +19,7 @@ const Ingresar =()=>{
 
     const entrar=()=>{
         if(user==='admin'&&pass==='#ccbanfield'){
-            navigate("/nhuhehvho", { replace: false });
+            navigate("/padministrador", { replace: false });
         }else{
             alert('No pudiste ingresar. Solo Administradores.')
         }
