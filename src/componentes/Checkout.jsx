@@ -33,7 +33,6 @@ const Checkout = () => {
             const col = collection(db,'Pedidos')
             const order = await addDoc(col,data)
             setOrderID(order.id)
-            updateStock()
             clearCart()
         } catch (error) {
             console.log(error)
@@ -43,9 +42,8 @@ const Checkout = () => {
     const updateStock = () =>{
         cart.map((e)=>{
             const docs = doc(db, 'productos', e.item.id)
-            const updStock = 0
             updateDoc(docs, {
-                stock : updStock
+                stock : 0
             })
         })
     }
@@ -86,7 +84,7 @@ const Checkout = () => {
                         onChange={inputChange} 
                     /><br/>
                     <br/>
-                    <Button>
+                    <Button onClick={()=>{ updateStock()}}>
                         <input 
                             className='confirmarCompra'
                             type="submit" 

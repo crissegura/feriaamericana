@@ -53,11 +53,7 @@ export const CartProvider = ({defaultValue = [], children }) => {
         })
         return cantidad;
     }
-
-    const isInCart = (id) =>{
-        return cart.find((elemento)=> elemento.item.id === id)
-    }
-
+    
     const updateStock3 = () =>{
         cart.map((e)=>{
             const docs = doc(db, 'productos', e.item.id)
