@@ -41,7 +41,7 @@ export const CartProvider = ({defaultValue = [], children }) => {
     const getTotal=()=>{
         let total = 0
         cart.forEach((element)=>{
-            total = total + (element.item.precio)
+            total = total + parseInt(element.item.precio)
         })
         return total;
     }

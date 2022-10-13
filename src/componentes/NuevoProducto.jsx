@@ -13,7 +13,7 @@ const NuevoProducto = () =>{
         nombre:'',
         descripcion:'',
         categoria:'',
-        precio:'',
+        precio:parseInt(),
         stock:''})
 
     const getInfo = (event) =>{
