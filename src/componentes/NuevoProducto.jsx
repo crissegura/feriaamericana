@@ -14,7 +14,7 @@ const NuevoProducto = () =>{
         descripcion:'',
         categoria:'',
         precio:'',
-        stock:''})
+        stock:1})
 
     const getInfo = (event) =>{
         event.preventDefault();
@@ -102,7 +102,7 @@ const NuevoProducto = () =>{
                 <label >precio</label>
                 <input 
                     onChange={getInfo}
-                    type="text" 
+                    type="number" 
                     name="precio" 
                     value={prod.precio} />
                 <br />

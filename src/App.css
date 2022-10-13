@@ -38,6 +38,16 @@ body{
     margin: 10px;
 }
 
+.imgInicio{
+    width: 100%;
+    height: 16rem;
+}
+
+.cardDescription{
+    max-height: 4rem;
+    min-height: 4rem;
+}
+
 .imgCarrito{
     width: 30px;
 }

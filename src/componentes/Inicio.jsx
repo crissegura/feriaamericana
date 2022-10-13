@@ -71,7 +71,7 @@ const Inicio = () =>{
                     <div className="container">
                     {mostrarStock1.map((producto)=>(
                         <Card className="card">
-                            <Card.Img variant="top" src={producto.foto} />
+                            <Card.Img variant="top" className="imgInicio" src={producto.foto} />
                             <Card.Body>
                                 <Card.Title className="cardTitle">{producto.nombre}</Card.Title>
                                 <Card.Text className="cardDescription">
