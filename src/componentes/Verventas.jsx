@@ -31,10 +31,21 @@ const Verventas = () =>{
             {productos.map((producto)=>(
                 <Card>
                     <Card.Body>
-                        {console.log(producto.items)}
-                        <Card.Title>
-                            Producto: {producto.items.title}
-                        </Card.Title>
+                    {
+                        producto.items.length>1?
+                        <div> {producto.items.map((e)=>{
+                            <Card.Title>
+                            Producto: {console.log(e.title)}
+                            </Card.Title>
+                        })
+                        } </div>
+                        :
+                        <div>
+                            <Card.Title>
+                            Producto: {producto.items[0].title}
+                            </Card.Title>
+                        </div>  
+                    }
                         <Card.Text>
                             Comprador: {producto.buyer.nombre}
                         </Card.Text>
