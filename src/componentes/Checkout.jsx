@@ -102,7 +102,7 @@ const Checkout = () => {
             </div>) : (
             <div className='orderDiv'>
                 <h3 className='orderTitle'>Orden de compra</h3>
-                <h4 className='norden'> {orderId} </h4>
+                <h4 className='norden'> Gracias por tu compra! <br />En breve nos vamos a estar comunicando con vos para arreglar el tema del pago y del envio.<br/> Saludos! </h4>
             </div>
                 )
             }

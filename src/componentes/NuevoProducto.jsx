@@ -81,7 +81,7 @@ const NuevoProducto = () =>{
         <div style={{textAlign:'center',paddingTop:'10px'}}>  
            <h3>Cargar nuevo producto</h3>
             <form  method="post" >
-                <label>Imagen</label>
+                <label>Imagen 1</label>
                 <input 
                     type="file"
                     name="foto" 
@@ -89,6 +89,7 @@ const NuevoProducto = () =>{
                     onChange={(event) => getchange(0,event)} />
                 <br />
                 <br />
+                <label>Imagen 2</label>
                  <input
                     type="file"
                     name="foto1"
@@ -96,6 +97,7 @@ const NuevoProducto = () =>{
                     onChange={(event) => getchange(1,event)} />
                 <br />
                 <br />
+                <label>Imagen 3</label>
                  <input
                     type="file"
                     name="foto2"
@@ -105,7 +107,9 @@ const NuevoProducto = () =>{
                 <br />
                 <label>Nombre</label>
                 <input 
+                    placeholder="Pantalon de jean"
                     type="text" 
+                    maxLength='22'
                     name="nombre" 
                     value={prod.nombre}
                     onChange={getInfo} />
@@ -115,6 +119,7 @@ const NuevoProducto = () =>{
                 <input 
                     type="text" 
                     name="descripcion" 
+                    maxLength='78'
                     value={prod.descripcion}
                     onChange={getInfo} />
                 <br />
@@ -124,7 +129,8 @@ const NuevoProducto = () =>{
                     type="text" 
                     name="categoria" 
                     value={prod.categoria}
-                    onChange={getInfo} />
+                    onChange={getInfo}
+                    placeholder='hombres/mujeres/niños' />
                 <br />
                 <br />
                 <label >precio</label>

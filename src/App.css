@@ -45,21 +45,22 @@ body{
 }
 
 .cardTitle{
-    max-height: 2.5rem;
     text-align: center;
-    min-height: 2.5rem;
+    font-size: 16px ;
 }
 
 .imgInicio{
     width: 100%;
-    max-height: 14rem;
-    min-height: 14rem;
+    max-height: 16rem;
+    min-height: 16rem;
 }
 
 .cardDescription{
     text-align: center;
     max-height: 4rem;
     min-height: 4rem;
+    font-size: 14px ;
+
 }
 
 .imgCarrito{
@@ -208,6 +209,7 @@ text-decoration: none;
 }
 
 .norden{
+    text-align: center;
     padding-top: 10px;
 }
 

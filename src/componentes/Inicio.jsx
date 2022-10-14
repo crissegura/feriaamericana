@@ -78,15 +78,18 @@ const Inicio = () =>{
                                 <Card.Img variant="top" className="imgInicio" src={producto.foto} />
                                 </Carousel.Item>
                                 <Carousel.Item>
-                                <Card.Img variant="top" className="imgInicio" src={producto.foto} />
+                                <Card.Img variant="top" className="imgInicio" src={producto.foto1} />
+                                </Carousel.Item>
+                                <Carousel.Item>
+                                <Card.Img variant="top" className="imgInicio" src={producto.foto2} />
                                 </Carousel.Item>
                             </Carousel>
                             
                             <Card.Body>
-                                <Card.Title className="cardTitle">{producto.nombre}</Card.Title>
-                                <Card.Text className="cardDescription">
+                                <h5 className="cardTitle">{producto.nombre}</h5>
+                                <p className="cardDescription">
                                    {producto.descripcion}
-                                </Card.Text>
+                                </p>
                                 <Contador producto={producto.precio} productoCard={producto}/>
                             </Card.Body>
                         </Card>
