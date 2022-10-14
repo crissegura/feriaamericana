@@ -10,6 +10,8 @@ const NuevoProducto = () =>{
     
     const [prod, setProd] = useState({
         foto:'',
+        foto1:"",
+        foto2:"",
         nombre:'',
         descripcion:'',
         categoria:'',
@@ -26,20 +28,29 @@ const NuevoProducto = () =>{
 
 
     const [file, setFile] = useState("");
+    const [file1, setFile1] = useState("");
+    const [file2, setFile2] = useState("");
 
-    const getchange = (event,arr) =>{
+    const getchange = (arr,event) =>{
         event.preventDefault();
-        console.log(event.target.files[0])
+
         const {name,value} = event.target
+
+        if (arr=== 0) {
         setFile(event.target.files[0])
+        }
+       if (arr=== 1) {
+        setFile1(event.target.files[0])
+        }
+        if ( arr===2){
+        setFile2(event.target.files[0])
+        }
         setProd((prev)=>{
             return {...prev,[name]:value}
         })
-        console.log("antes")
+
         const file=event.target.files[0]
-        console.log(file)
-        console.log(file.name)
-        console.log("despues")
+
         const storageRef = ref(storage, `${file.name}`);
         const uploadTask = uploadBytesResumable(storageRef, file);
         uploadBytes(storageRef, file).then((snapshot) => {
@@ -48,9 +59,12 @@ const NuevoProducto = () =>{
     }
     const subir = async()=>{
         try{
+
             const docRef = await addDoc(collection(db, "productos"), {
                 nombre: prod.nombre,
                 foto: "https://firebasestorage.googleapis.com/v0/b/feriaamericana-55805.appspot.com/o/"+file.name+"?alt=media",
+                foto1:"https://firebasestorage.googleapis.com/v0/b/feriaamericana-55805.appspot.com/o/"+file1.name+"?alt=media",
+                foto2:"https://firebasestorage.googleapis.com/v0/b/feriaamericana-55805.appspot.com/o/"+file2.name+"?alt=media",
                 descripcion:prod.descripcion,
                 categoria:prod.categoria,
                 precio: prod.precio,
@@ -72,7 +86,21 @@ const NuevoProducto = () =>{
                     type="file"
                     name="foto" 
                     value={prod.foto}
-                    onChange={getchange} />
+                    onChange={(event) => getchange(0,event)} />
+                <br />
+                <br />
+                 <input
+                    type="file"
+                    name="foto1"
+                    value={prod.foto1}
+                    onChange={(event) => getchange(1,event)} />
+                <br />
+                <br />
+                 <input
+                    type="file"
+                    name="foto2"
+                    value={prod.foto2}
+                    onChange={(event) => getchange(2,event)} />
                 <br />
                 <br />
                 <label>Nombre</label>
