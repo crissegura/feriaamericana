@@ -1,39 +1,53 @@
-import React,{useState,useEffect} from "react";
+import React, {useState, useEffect} from "react";
+import Card from 'react-bootstrap/Card';
 import { collection, getDocs} from 'firebase/firestore';
 import db from '../services/firebase';
+import Loader from "./Loader";
 
 
+const Verventas = () =>{
 
-const Verventas=()=>{
-
-    const [ventas, setVentas] = useState([])
-
-    const getVentas=async()=>{
+    const [productos, setProductos] = useState([])
+    const getProductos=async()=>{
         try{
             const document = collection(db,"Pedidos")
             const col = await getDocs(document)
             const result = col.docs.map((doc)=> doc={id:doc.id,...doc.data()})
-            setVentas(result)
+            setProductos(result)
         }catch(error){
             console.log(error)
         }
     }
 
     useEffect(()=>{
-        getVentas()
+        getProductos()
     },[])
 
     return(
-        <div style={{textAlign:'center',paddingTop:'10px'}} >
-            <h3>Ventas</h3>
+        <>
+            <h3 style={{textAlign:'center'}} >Ventas</h3>
             {
-                ventas.map((venta)=>{
-                   <h3> {venta.buyer} </h3>
-                })
-            }
-        </div>
+            <div className="">
+            {productos.map((producto)=>(
+                <Card>
+                    <Card.Body>
+                        {console.log(producto.items)}
+                        <Card.Title>
+                            Producto: {producto.items.title}
+                        </Card.Title>
+                        <Card.Text>
+                            Comprador: {producto.buyer.nombre}
+                        </Card.Text>
+                        <Card.Text>
+                            WhatsApp: {producto.buyer.telefono}
+                        </Card.Text>
+                    </Card.Body>
+                </Card>
+                ))}
+            </div>
+        }
+    </>
     )
-
 }
 
 export default Verventas;
