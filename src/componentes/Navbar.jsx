@@ -14,6 +14,13 @@ function Navbarr() {
   return (
     <Navbar bg="light" expand="lg" >
       <Container >
+      <Link to='/carrito' style={{textDecoration:'none'}} className='cartCel'>
+              <button className='btn-nav nCarrito'>
+                <span className='nCarrito'> {totalCantidad()} </span>
+                <img className='imgCarrito' 
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgp9PaIdYvGKH3DAZTIsj9Fs2YAxY8Pp8ujw&usqp=CAU" alt="" />
+              </button>
+        </Link>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <div className='navItems'>
@@ -41,7 +48,7 @@ function Navbarr() {
                 </Link>
               </div>
             </NavDropdown>
-            <Link to='/carrito' style={{textDecoration:'none'}}>
+            <Link to='/carrito'  className='cartPc' style={{textDecoration:'none'}}>
               <button className='btn-nav nCarrito'>
                 <span className='nCarrito'> {totalCantidad()} </span>
                 <img className='imgCarrito' 

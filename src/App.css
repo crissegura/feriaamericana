@@ -213,7 +213,11 @@ text-decoration: none;
     padding-top: 10px;
 }
 
-@media(max-width:770px){
+.cartCel{
+    display: none;
+}
+
+@media(max-width:991px){
     .navItems{
         display: flex;
         flex-direction: column;
@@ -230,5 +234,11 @@ text-decoration: none;
         width:15rem;
         text-align: center;
         margin: 5px;
+    }
+    .cartCel{
+        display: block;
+    }
+    .cartPc{
+        display: none;
     }
 }
