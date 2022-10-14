@@ -27,7 +27,7 @@ const NuevoProducto = () =>{
 
     const [file, setFile] = useState("");
 
-    const getchange = (event) =>{
+    const getchange = (event,arr) =>{
         event.preventDefault();
         console.log(event.target.files[0])
         const {name,value} = event.target
