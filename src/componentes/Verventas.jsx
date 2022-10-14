@@ -34,9 +34,9 @@ const Verventas = () =>{
                     {
                         producto.items.length>1?
                         <div> {producto.items.map((e)=>{
-                            <Card.Title>
-                            Producto: {console.log(e.title)}
-                            </Card.Title>
+                            return <Card.Title>
+                                        Producto: {e.title}
+                                    </Card.Title>
                         })
                         } </div>
                         :
