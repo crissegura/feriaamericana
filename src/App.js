@@ -11,6 +11,7 @@ import Ingresar from './componentes/Ingresar';
 import NuevoProducto from './componentes/NuevoProducto';
 import Padministrador from './componentes/Padministrador';
 import Verventas from './componentes/Verventas';
+import FotosProducto from './componentes/FotosProducto';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Navbarr />
             <Routes>
               <Route path='/' element={<Inicio />} />
+              <Route path='/fotos' element={<FotosProducto />} />
               <Route path='/carrito' element={<Carrito />} />
               <Route path='/categoria/:categoria' element={<Inicio />} />
               <Route path='/checkout' element={<Checkout />} />

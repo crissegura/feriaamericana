@@ -29,7 +29,6 @@ const Verventas=()=>{
             {
                 ventas.map((venta)=>{
                    <h3> {venta.buyer} </h3>
-                   {console.log(venta.buyer)}
                 })
             }
         </div>
