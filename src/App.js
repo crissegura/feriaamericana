@@ -13,6 +13,7 @@ import Padministrador from './componentes/Padministrador';
 import Verventas from './componentes/Verventas';
 import FotosProducto from './componentes/FotosProducto';
 
+
 function App() {
   return (
     <div className="App">
