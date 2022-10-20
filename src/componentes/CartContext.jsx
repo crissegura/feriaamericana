@@ -45,7 +45,7 @@ export const CartProvider = ({defaultValue = [], children }) => {
                     }
                 ]
             )
-            setTimeout(updateStock3,1000*60,[item]);
+            setTimeout(updateStock3,1000*60*60,[item]);
             setTimeout(clearCart,1000*60*60,'Vacie el carrito.');
         }
 
