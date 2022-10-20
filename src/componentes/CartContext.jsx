@@ -11,9 +11,9 @@ export const CartProvider = ({defaultValue = [], children }) => {
 
     const [cart, setCart] = useState(defaultValue);
 
-    const updateStock3 = () =>{
+    const updateStock3 = (cart) =>{
         cart.map((e)=>{
-            const docs = doc(db, 'productos', e.item.id)
+            const docs = doc(db, 'productos', e.id)
             const updStock = 1
             updateDoc(docs, {
                 stock : updStock
@@ -21,19 +21,9 @@ export const CartProvider = ({defaultValue = [], children }) => {
         })
     }
 
-    const updateStock4695 = () =>{
-        console.log(cart)
-        cart.map((e)=>{
-            const docs = doc(db, 'productos', e.item.id)
-            updateDoc(docs, {
-                stock : 1
-            })
-        })
-    }
-
-    const clearCart = () =>{
-        updateStock3()
+    const clearCart = (mensaje) =>{
         setCart([])
+        alert(mensaje)
     }
 
     const updateStock2Cart = (cart) =>{
@@ -46,10 +36,6 @@ export const CartProvider = ({defaultValue = [], children }) => {
         })
     }
 
-    const prueba=()=>{
-        alert('hola')
-    }
-
     const addToCart = (item) =>{
             updateStock2Cart([item])
             setCart(
@@ -59,7 +45,8 @@ export const CartProvider = ({defaultValue = [], children }) => {
                     }
                 ]
             )
-            setTimeout(prueba,3000);
+            setTimeout(updateStock3,1000*60,[item]);
+            setTimeout(clearCart,(1000*60)*60,'Vacie el carrito.');
         }
 
     const getTotal=()=>{
