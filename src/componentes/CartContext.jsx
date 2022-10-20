@@ -19,11 +19,21 @@ export const CartProvider = ({defaultValue = [], children }) => {
                 stock : updStock
             })
         })
+        clearCart()
     }
 
-    const clearCart = (mensaje) =>{
+    const updateStock3bis = () =>{
+        cart.map((e)=>{
+            const docs = doc(db, 'productos', e.item.id)
+            const updStock = 1
+            updateDoc(docs, {
+                stock : updStock
+            })
+        })
+    }
+
+    const clearCart = () =>{
         setCart([])
-        alert(mensaje)
     }
 
     const updateStock2Cart = (cart) =>{
@@ -45,8 +55,7 @@ export const CartProvider = ({defaultValue = [], children }) => {
                     }
                 ]
             )
-            setTimeout(updateStock3,1000*60*60,[item]);
-            setTimeout(clearCart,1000*60*60,'Vacie el carrito.');
+            setTimeout(updateStock3,6000000,[item]);
         }
 
     const getTotal=()=>{
@@ -67,7 +76,7 @@ export const CartProvider = ({defaultValue = [], children }) => {
     
     const removeFromCart = (id) =>{
         const newCart = [...cart].filter(elemento=> elemento.item.id !== id)
-        updateStock3()
+        updateStock3bis()
         setCart(newCart)
     }
 
