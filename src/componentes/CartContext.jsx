@@ -76,7 +76,17 @@ export const CartProvider = ({defaultValue = [], children }) => {
     
     const removeFromCart = (id) =>{
         const newCart = [...cart].filter(elemento=> elemento.item.id !== id)
-        updateStock3bis()
+        cart.map((e)=>{
+            const docs = doc(db, 'productos', e.item.id)
+            console.log(e.item.id)
+            console.log(id)
+            if(id===e.item.id){
+                const updStock = 1
+                updateDoc(docs, {
+                    stock : updStock
+                })
+            }
+        })
         setCart(newCart)
     }
 
