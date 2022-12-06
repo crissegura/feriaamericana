@@ -130,7 +130,7 @@ const NuevoProducto = () =>{
                     name="categoria" 
                     value={prod.categoria}
                     onChange={getInfo}
-                    placeholder='hombres/mujeres/niños' />
+                    placeholder='iphone/accesorios' />
                 <br />
                 <br />
                 <label >precio</label>

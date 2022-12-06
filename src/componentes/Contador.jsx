@@ -16,12 +16,12 @@ function Contador({stock, producto, productoCard}){
     return(
         <div className='divPrecioyAdd'>
             <p>$ {producto} </p>
-            <Link to='/carrito/'>
+            {/*<Link to='/carrito/'>
                 <Button variant='primary' onClick={()=> onAdd()} >
                     Reservar
                 </Button>
             </Link>
-            
+            */} 
         </div>
     )
 }

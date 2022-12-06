@@ -41,7 +41,7 @@ body{
 .card{
     width:15rem;
     max-height: 30rem;
-    margin: 10px;
+    margin: 5px;
 }
 
 .cardTitle{
@@ -223,7 +223,17 @@ text-decoration: none;
     display: none;
 }
 
+.contenedor{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
 @media(max-width:991px){
+    body{
+        padding-bottom: 60px;
+    }
     .navItems{
         display: flex;
         flex-direction: column;
@@ -237,9 +247,16 @@ text-decoration: none;
         padding: 5px;
     }
     .card{
-        width:15rem;
+        width:10rem;
         text-align: center;
-        margin: 5px;
+        margin: 5px 1px;
+    }
+    .cardDescription{
+        text-align: center;
+        max-height: 5rem;
+        min-height: 5rem;
+        font-size: 14px ;
+    
     }
     .cartCel{
         display: block;

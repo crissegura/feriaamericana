@@ -70,7 +70,7 @@ const Inicio = () =>{
             <div className="container">
                 {
                     mostrarStock1.length !==0?
-                    <div className="container">
+                    <div className="contenedor">
                     {mostrarStock1.map((producto)=>(
                         <Card className="card">
                             <Carousel>

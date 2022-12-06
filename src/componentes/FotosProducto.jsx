@@ -42,25 +42,6 @@ const FotosProducto=()=>{
                 />
             </Carousel.Item>
         </Carousel>
-        {/*
-            fotos.map((foto)=>{
-                <Carousel>
-                    {console.log(foto.foto)}
-                    <Carousel.Item>
-                        <img className="d-block w-50"
-                        src={foto.foto}
-                        alt=""
-                        />
-                    </Carousel.Item>
-                    <Carousel.Item>
-                        <img className="d-block w-50"
-                        src={foto.foto}
-                        alt=""
-                        />
-                    </Carousel.Item>
-                </Carousel>
-            })
-        */}
         </>
     )
 

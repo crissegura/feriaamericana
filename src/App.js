@@ -12,6 +12,7 @@ import NuevoProducto from './componentes/NuevoProducto';
 import Padministrador from './componentes/Padministrador';
 import Verventas from './componentes/Verventas';
 import FotosProducto from './componentes/FotosProducto';
+import PlanCanje from './componentes/PlanCanje';
 
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
               <Route path='/fotos' element={<FotosProducto />} />
               <Route path='/carrito' element={<Carrito />} /> 
               <Route path='/categoria/:categoria' element={<Inicio />} />
+              <Route path='/categoria/plancanje' element={<PlanCanje />} />
               <Route path='/checkout' element={<Checkout />} />
               <Route path='/ingresar' element={<Ingresar />} />
               <Route path='/padministrador' element={<Padministrador />}/>

@@ -32,17 +32,17 @@ function Navbarr() {
             </Link>
             <NavDropdown title="Categorias" id="basic-nav-dropdown">
               <div className='categoria'>
-                <Link to='/categoria/mujeres' >    
+                <Link to='/categoria/iphone' >    
                     <button className='btn-nav ' >
                       Iphone
                     </button>
                 </Link>
-                <Link to='/categoria/hombres' >      
+                <Link to='/categoria/accesorios' >      
                     <button className='btn-nav py-1' >
                       Accesorios
                     </button>
                 </Link>
-                <Link to='/categoria/niños' >      
+                <Link to='/categoria/plancanje' >      
                     <button className='btn-nav ' >
                       Plan canje
                     </button>
