@@ -6,7 +6,7 @@ import { collection, getDocs, query, where } from 'firebase/firestore';
 import db from '../services/firebase';
 import Loader from "./Loader";
 import Carousel from 'react-bootstrap/Carousel';
-import FotosProducto from "./FotosProducto";
+
 
 
 const Inicio = () =>{
@@ -14,7 +14,6 @@ const Inicio = () =>{
     const [productos, setProductos] = useState([])
 
     const {categoria} = useParams()
-
 
     const getProductos=async()=>{
         try{
@@ -72,27 +71,25 @@ const Inicio = () =>{
                     mostrarStock1.length !==0?
                     <div className="contenedor">
                     {mostrarStock1.map((producto)=>(
-                        <Card className="card">
-                            <Carousel>
-                                <Carousel.Item>
-                                <Card.Img variant="top" className="imgInicio" src={producto.foto} />
-                                </Carousel.Item>
-                                <Carousel.Item>
-                                <Card.Img variant="top" className="imgInicio" src={producto.foto1} />
-                                </Carousel.Item>
-                                <Carousel.Item>
-                                <Card.Img variant="top" className="imgInicio" src={producto.foto2} />
-                                </Carousel.Item>
-                            </Carousel>
-                            
-                            <Card.Body>
-                                <h5 className="cardTitle">{producto.nombre}</h5>
-                                <p className="cardDescription">
-                                   {producto.descripcion}
-                                </p>
-                                <Contador producto={producto.precio} productoCard={producto}/>
-                            </Card.Body>
-                        </Card>
+                        <div>
+                            <Card className="card">
+                                <Carousel>
+                                    <Carousel.Item>
+                                    <Card.Img variant="top" className="imgInicio" src={producto.foto} />
+                                    </Carousel.Item>
+                                    <Carousel.Item>
+                                    <Card.Img variant="top" className="imgInicio" src={producto.foto1} />
+                                    </Carousel.Item>
+                                    <Carousel.Item>
+                                    <Card.Img variant="top" className="imgInicio" src={producto.foto2} />
+                                    </Carousel.Item>
+                                </Carousel>
+                                <Card.Body>
+                                    <h5 className="cardTitle">{producto.nombre}</h5>
+                                    <Contador producto={producto.precio} productoCard={producto}/>
+                                </Card.Body>
+                            </Card>
+                        </div>
                     ))}
                     </div>
                     :
@@ -105,6 +102,7 @@ const Inicio = () =>{
             </div>
             )
         }
+         
         </>
     )
 

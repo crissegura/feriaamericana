@@ -51,16 +51,8 @@ body{
 
 .imgInicio{
     width: 100%;
-    max-height: 16rem;
-    min-height: 16rem;
-}
-
-.cardDescription{
-    text-align: center;
-    max-height: 4rem;
-    min-height: 4rem;
-    font-size: 14px ;
-
+    max-height: 18rem;
+    min-height: 18rem;
 }
 
 .imgCarrito{
@@ -238,6 +230,10 @@ text-decoration: none;
     cursor: pointer;
 }
 
+.btnModal{
+    border: none;
+}
+
 @media(max-width:991px){
     body{
         padding-bottom: 60px;
@@ -258,13 +254,6 @@ text-decoration: none;
         width:10rem;
         text-align: center;
         margin: 5px 1px;
-    }
-    .cardDescription{
-        text-align: center;
-        max-height: 5rem;
-        min-height: 5rem;
-        font-size: 14px ;
-    
     }
     .cartCel{
         display: block;
