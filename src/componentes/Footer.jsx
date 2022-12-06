@@ -6,7 +6,7 @@ const Footer =()=>{
         <>
             <p className='footer'>
                 <Admin/>
-                E-commerce Cristian Segura
+                Solicitá tu web <a style={{color:'black',textDecoration:'none'}} href="https://cristiansegura.netlify.app/" target='-'> - https://cristiansegura.netlify.app/ </a>
             </p>
         </>
     )
