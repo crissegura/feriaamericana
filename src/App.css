@@ -252,7 +252,8 @@ text-decoration: none;
     }
     .card{
         width:10rem;
-        max-height: 23rem;
+        max-height: 22rem;
+        min-height: 22rem;
         text-align: center;
         margin: 5px 1px;
     }
