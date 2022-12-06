@@ -75,13 +75,13 @@ const Inicio = () =>{
                             <Card className="card">
                                 <Carousel>
                                     <Carousel.Item>
-                                    <Card.Img variant="top" className="imgInicio" src={producto.foto} />
+                                    <img className="imgInicio" src={producto.foto} />
                                     </Carousel.Item>
                                     <Carousel.Item>
-                                    <Card.Img variant="top" className="imgInicio" src={producto.foto1} />
+                                    <img className="imgInicio" src={producto.foto1} />
                                     </Carousel.Item>
                                     <Carousel.Item>
-                                    <Card.Img variant="top" className="imgInicio" src={producto.foto2} />
+                                    <img className="imgInicio" src={producto.foto2} />
                                     </Carousel.Item>
                                 </Carousel>
                                 <Card.Body>
