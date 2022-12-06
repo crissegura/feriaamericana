@@ -51,8 +51,8 @@ body{
 
 .imgInicio{
     width: 100%;
-    max-height: 14rem;
-    min-height: 14rem;
+    max-height: 16rem;
+    min-height: 16rem;
 }
 
 .imgCarrito{
@@ -255,6 +255,11 @@ text-decoration: none;
         max-height: 23rem;
         text-align: center;
         margin: 5px 1px;
+    }
+    .imgInicio{
+        width: 100%;
+        max-height: 14rem;
+        min-height: 14rem;
     }
     .cartCel{
         display: block;
