@@ -13,6 +13,7 @@ import Padministrador from './componentes/Padministrador';
 import Verventas from './componentes/Verventas';
 import FotosProducto from './componentes/FotosProducto';
 import PlanCanje from './componentes/PlanCanje';
+import Whatsapp from './componentes/Whatsapp';
 
 
 function App() {
@@ -33,6 +34,7 @@ function App() {
               <Route path='/nhuhehvho' element={<NuevoProducto />} />
               <Route path='/pvendidos' element={<Verventas />} />
             </Routes>
+          <Whatsapp />
           <Footer />
         </BrowserRouter>
       </CartProvider>

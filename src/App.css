@@ -230,6 +230,14 @@ text-decoration: none;
     flex-wrap: wrap;
 }
 
+.imgWpp{
+    position: fixed;
+    width: 60px;
+    right: 20px;
+    bottom: 50px;
+    cursor: pointer;
+}
+
 @media(max-width:991px){
     body{
         padding-bottom: 60px;

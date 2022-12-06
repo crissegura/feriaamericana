@@ -1,10 +1,10 @@
 import Container from 'react-bootstrap/Container';
-import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import { Link } from 'react-router-dom';
 import {CartContext} from './CartContext';
 import {useContext} from 'react';
+import Admin from './Admin';
 
 
 function Navbarr() {
@@ -21,7 +21,11 @@ function Navbarr() {
                 src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgp9PaIdYvGKH3DAZTIsj9Fs2YAxY8Pp8ujw&usqp=CAU" alt="" />
               </button>
         </Link> */}
-        <Navbar.Brand><img className='imgNav' src="https://apple-store.com.ar/wp-content/uploads/2022/10/cropped-Favicon-32x32.png" alt="" /></Navbar.Brand>
+        <Navbar.Brand>
+          <Link to='/'>
+            <img className='imgNav' src="https://apple-store.com.ar/wp-content/uploads/2022/10/cropped-Favicon-32x32.png" alt="" />
+          </Link>
+        </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <div className='navItems'>
@@ -49,6 +53,7 @@ function Navbarr() {
                 </Link>
               </div>
             </NavDropdown>
+            <Admin />
             {/*  
             <Link to='/carrito'  className='cartPc' style={{textDecoration:'none'}}>
               <button className='btn-nav nCarrito'>
