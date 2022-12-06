@@ -113,6 +113,12 @@ label{
     text-align: center;
 }
 
+.imgNav{
+    background-color: rgba(0, 0, 0, 0.422);
+    border-radius: 100%;
+    padding: 5px;
+}
+
 .categoria{
     display: flex;
     flex-direction: column;

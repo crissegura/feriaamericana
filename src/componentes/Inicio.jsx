@@ -63,8 +63,8 @@ const Inicio = () =>{
             productos.length !==0?
             (<div>
                 <div className='formBuscar'>
-                <label>Buscar producto</label>
-                <input className="inputBuscar" type="text" value={texto} onChange={getTexto} placeholder="🔍︎ jean" />
+                <label>¿Qué estás buscando? </label>
+                <input className="inputBuscar" type="text" value={texto} onChange={getTexto} placeholder="ej: iphone " />
             </div>
             
             <div className="container">

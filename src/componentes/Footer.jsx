@@ -6,7 +6,7 @@ const Footer =()=>{
         <>
             <p className='footer'>
                 <Admin/>
-                E-commerce hecho por Techne Arg 2022
+                E-commerce Cristian Segura
             </p>
         </>
     )

@@ -14,13 +14,14 @@ function Navbarr() {
   return (
     <Navbar bg="light" expand="lg" >
       <Container >
-      <Link to='/carrito' style={{textDecoration:'none'}} className='cartCel'>
+      {/*<Link to='/carrito' style={{textDecoration:'none'}} className='cartCel'>
               <button className='btn-nav nCarrito'>
                 <span className='nCarrito'> {totalCantidad()} </span>
                 <img className='imgCarrito' 
                 src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgp9PaIdYvGKH3DAZTIsj9Fs2YAxY8Pp8ujw&usqp=CAU" alt="" />
               </button>
-        </Link>
+        </Link> */}
+        <Navbar.Brand><img className='imgNav' src="https://apple-store.com.ar/wp-content/uploads/2022/10/cropped-Favicon-32x32.png" alt="" /></Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <div className='navItems'>
@@ -33,21 +34,22 @@ function Navbarr() {
               <div className='categoria'>
                 <Link to='/categoria/mujeres' >    
                     <button className='btn-nav ' >
-                      Mujeres
+                      Iphone
                     </button>
                 </Link>
                 <Link to='/categoria/hombres' >      
                     <button className='btn-nav py-1' >
-                      Hombres
+                      Accesorios
                     </button>
                 </Link>
                 <Link to='/categoria/niños' >      
                     <button className='btn-nav ' >
-                      Niños
+                      Plan canje
                     </button>
                 </Link>
               </div>
             </NavDropdown>
+            {/*  
             <Link to='/carrito'  className='cartPc' style={{textDecoration:'none'}}>
               <button className='btn-nav nCarrito'>
                 <span className='nCarrito'> {totalCantidad()} </span>
@@ -55,6 +57,7 @@ function Navbarr() {
                 src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgp9PaIdYvGKH3DAZTIsj9Fs2YAxY8Pp8ujw&usqp=CAU" alt="" />
               </button>
             </Link>
+            */}
           </div>
         </Navbar.Collapse>
       </Container>
