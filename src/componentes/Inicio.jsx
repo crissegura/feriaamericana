@@ -55,8 +55,6 @@ const Inicio = () =>{
                         .includes(texto.toString()
                         .toLocaleLowerCase()))
 
-    const mostrarStock1 = buscarProducto.filter(producto=>producto.stock>0)
-
     return(
         <>
         {
@@ -69,9 +67,9 @@ const Inicio = () =>{
             
             <div className="container">
                 {
-                    mostrarStock1.length !==0?
+                    buscarProducto.length !==0?
                     <div className="contenedor">
-                    {mostrarStock1.map((producto)=>(
+                    {buscarProducto.map((producto)=>(
                         <div>
                             <Card className="card">
                                 <Carousel>
@@ -89,7 +87,7 @@ const Inicio = () =>{
                                     <h5 className="cardTitle">{producto.nombre}</h5>
                                     <Contador producto={producto.precio}/>
                                     <Link to={`/detalle/${producto.id}`}>
-                                        <Button variant='primary' >Ver más</Button>
+                                        <Button variant='primary' >Ver producto</Button>
                                     </Link>
                                 </Card.Body>
                             </Card>

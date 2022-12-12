@@ -39,6 +39,7 @@ body{
 }
 
 .card{
+    text-align: center;
     width:15rem;
     max-height: 30rem;
     margin: 5px;
@@ -234,6 +235,40 @@ text-decoration: none;
     border: none;
 }
 
+.detail{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.childDetail{
+    text-align: center;
+    width: 40%;
+}
+
+.imgDetail{
+    width: 30rem;
+    min-height:35rem ;
+    max-height: 35rem ;
+}
+
+.btnDet{
+    background-color: transparent;
+    padding: 15px;
+    padding-bottom: 18px;
+    border: solid 1px rgb(223, 223, 223);
+    color: black;
+    text-decoration: none;
+    border-radius: 15px;
+}
+
+.wpDetail{
+    width: 40px;
+}
+.tituloCel{
+    display: none;
+}
+
 @media(max-width:991px){
     body{
         padding-bottom: 60px;
@@ -265,6 +300,34 @@ text-decoration: none;
         display: block;
     }
     .cartPc{
+        display: none;
+    }
+    
+    .detail,.childDetail,.imgDetail{
+        display: none;   
+    }
+
+    .detail2{
+        display: block;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .childDetail2{
+        display: block;
+        width: 80%;
+    }
+    .imgDetail2{
+        display: block;
+        width: 100%;
+    }
+
+    .tituloCel{
+        display: block;
+    }
+
+    .titulopc{
         display: none;
     }
 }

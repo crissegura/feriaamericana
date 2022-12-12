@@ -25,7 +25,7 @@ function App() {
           <Navbarr />
             <Routes>
               <Route path='/' element={<Inicio />} />
-              <Route path='/detalle/:id' element={<ItemDetail />} />
+              <Route path='/detalle/:id' element={<ItemDetailContainer />} />
               <Route path='/fotos' element={<FotosProducto />} />
               <Route path='/carrito' element={<Carrito />} /> 
               <Route path='/categoria/:categoria' element={<Inicio />} />
@@ -40,7 +40,6 @@ function App() {
           <Footer />
         </BrowserRouter>
       </CartProvider>
-      <ItemDetailContainer />
     </div>
   );
 }

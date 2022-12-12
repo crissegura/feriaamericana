@@ -119,7 +119,6 @@ const NuevoProducto = () =>{
                 <input 
                     type="text" 
                     name="descripcion" 
-                    maxLength='78'
                     value={prod.descripcion}
                     onChange={getInfo} />
                 <br />
