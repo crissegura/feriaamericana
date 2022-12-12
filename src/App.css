@@ -244,6 +244,7 @@ text-decoration: none;
 .childDetail{
     text-align: center;
     width: 40%;
+    margin: 0 10px;
 }
 
 .imgDetail{
