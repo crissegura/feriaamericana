@@ -14,7 +14,8 @@ import Verventas from './componentes/Verventas';
 import FotosProducto from './componentes/FotosProducto';
 import PlanCanje from './componentes/PlanCanje';
 import Whatsapp from './componentes/Whatsapp';
-
+import ItemDetail from './componentes/ItemDetail';
+import ItemDetailContainer from './componentes/DetailConteiner';
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
           <Navbarr />
             <Routes>
               <Route path='/' element={<Inicio />} />
+              <Route path='/detalle/:id' element={<ItemDetail />} />
               <Route path='/fotos' element={<FotosProducto />} />
               <Route path='/carrito' element={<Carrito />} /> 
               <Route path='/categoria/:categoria' element={<Inicio />} />
@@ -38,6 +40,7 @@ function App() {
           <Footer />
         </BrowserRouter>
       </CartProvider>
+      <ItemDetailContainer />
     </div>
   );
 }

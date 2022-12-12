@@ -50,8 +50,7 @@ body{
 }
 
 .imgInicio{
-    margin-left: 1.5rem;
-    width: 12rem;
+    width: 100%;
     max-height: 16rem;
     min-height: 16rem;
 }
@@ -259,10 +258,8 @@ text-decoration: none;
         margin: 5px 1px;
     }
     .imgInicio{
-        width: 8rem;
-        max-height: 14rem;
-        min-height: 14rem;
-        margin-left: 0;
+        max-height: 13rem;
+        min-height: 13rem;
     }
     .cartCel{
         display: block;

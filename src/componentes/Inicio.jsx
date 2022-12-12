@@ -6,7 +6,8 @@ import { collection, getDocs, query, where } from 'firebase/firestore';
 import db from '../services/firebase';
 import Loader from "./Loader";
 import Carousel from 'react-bootstrap/Carousel';
-
+import { Button } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 
 const Inicio = () =>{
@@ -86,7 +87,10 @@ const Inicio = () =>{
                                 </Carousel>
                                 <Card.Body>
                                     <h5 className="cardTitle">{producto.nombre}</h5>
-                                    <Contador producto={producto.precio} productoCard={producto}/>
+                                    <Contador producto={producto.precio}/>
+                                    <Link to={`/detalle/${producto.id}`}>
+                                        <Button variant='primary' >Ver más</Button>
+                                    </Link>
                                 </Card.Body>
                             </Card>
                         </div>
